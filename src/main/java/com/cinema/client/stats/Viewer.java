@@ -1,16 +1,21 @@
 package com.cinema.client.stats;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Viewer {
     private String name;
     private int age;
-    private int filmCount;
-
-    public Viewer(String name, int age, int filmCount) {
+    private final List<Cinema> watched;
+    public Viewer(String name, int age) {
         this.name = name;
         this.age = age;
-        this.filmCount = filmCount;
+        watched = new ArrayList<>();
     }
-
+    @SuppressWarnings("unused")
+    public List<Cinema> getWatched() {
+        return watched;
+    }
     @SuppressWarnings("unused")
    public void setName(String name) {
         this.name = name;
@@ -28,11 +33,6 @@ public class Viewer {
     }
     @SuppressWarnings("unused")
     public int getFilmCount() {
-        return filmCount;
+        return watched.size();
     }
-    @SuppressWarnings("unused")
-    public void setFilmCount(int filmCount) {
-        this.filmCount = filmCount;
-    }
-
 }
